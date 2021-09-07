@@ -1,0 +1,138 @@
+.details-switch-demo-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  transition: background 1s;
+
+}
+
+.details-switch-demo {
+  margin: 40px auto;
+  width: 600px;
+  height: 370px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.details-switch-demo-img-wrapper,
+.details-switch-demo-text-wrapper {
+  width: 50%;
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.details-switch-demo-text-wrapper {
+  background: #111827;
+}
+
+.details-switch-demo-pic,
+.details-switch-demo-map {
+  position: absolute;
+}
+
+.details-switch-demo-pic {
+  width: 100%;
+  top: 100px;
+  left: 0px;
+}
+
+.details-switch-demo-map {
+  width: 250px;
+  top: 60px;
+  left: 30px;
+}
+.details-switch-demo-map.map2{
+  width: 200px;
+  left: 50px;
+}
+
+.details-switch-demo-text-wrapper .banner-anim-elem {
+  padding: 40px;
+  /* background: #111827; */
+}
+
+.details-switch-demo-text-wrapper h1 {
+  font-size: 18px;
+  margin: 5px auto;
+  color: #8B5CD7;
+  font-weight: 700;
+}
+
+.details-switch-demo-text-wrapper em {
+  height: 2px;
+  width: 60px;
+  border-radius: 2px;
+  display: block;
+  color: #111827;
+}
+
+.details-switch-demo-text-wrapper p {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.details-switch-demo-wrapper .anticon{
+  position: absolute;
+  font-size: 24px;
+  top: 50%;
+  margin-top: -12px;
+  cursor: pointer;
+}
+
+.details-switch-demo-wrapper .anticon-left{
+  left: 5px;
+  z-index: 999;
+}
+
+.details-switch-demo-wrapper .anticon-right{
+  right: 5px;
+}
+@media screen and (max-width: 414px) {
+  .details-switch-demo {
+    transform: scale(.6) translateX(12px);
+    transform-origin: left center;
+  }
+}
+@media screen and (max-width: 376px) {
+  .details-switch-demo {
+    transform: scale(.55) translateX(38px);
+  }
+  .details-switch-demo-text-wrapper h1 {
+    font-size: 40px !important;
+  }
+  
+  .details-switch-demo-text-wrapper p {
+    font-size: 22px !important;
+    height: 269px !important;
+    overflow-y: scroll !important;
+  }
+
+  .details-switch-demo-text-wrapper .banner-anim-elem {
+    padding: 5px 0 5px 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .details-switch-demo {
+    transform: scale(.46) translateX(46px);
+  }
+}
+
+#tick {
+  stroke-dasharray: 210px;
+  stroke-dashoffset: 210px;
+  animation: 3s tick ease-in-out infinite;
+}
+
+@keyframes tick {
+  0%, 50% {
+    stroke-dashoffset: 210px;
+  }
+  50%, 100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
