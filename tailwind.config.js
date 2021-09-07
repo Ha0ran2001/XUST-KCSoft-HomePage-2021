@@ -9,7 +9,7 @@ module.exports = {
       }),
       backgroundImage: theme => ({
         'home-page': "url(./src/assets/home.jpg)",
-        'award': "url(./src/assets/construction-background.png)"
+        'award': "url(./src/assets/construction-background.png)",
       }),
       fontFamily: theme => ({
         'Allison': ['Allison']
