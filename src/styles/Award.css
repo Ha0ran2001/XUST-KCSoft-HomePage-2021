@@ -4,17 +4,13 @@
   position: relative;
   width: 700px;
   height: 200px;
-  border: none;
 }
 
 .mask-box .mask {
   background-blend-mode: normal;
-  /* position: absolute; */
   height: 100%;
   width: 250px;
-  /* right: 0; */
   float: right;
-  border: none;
 }
 
 
@@ -25,4 +21,28 @@
 .lanqiao {
   background-image: linear-gradient(to right, rgb(17, 24, 39), transparent), url("../assets/lanqiaopng.png");
 
+}
+
+@media screen and (max-width: 770px) {
+  .mask-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 12px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mask-box .mask {
+    display: block;
+    height: 200px;
+  }
+  .acm {
+    background-image: linear-gradient(to bottom, rgb(17, 24, 39), transparent), url("../assets/acm.png") ;
+  }
+  .lanqiao {
+    background-image: linear-gradient(to bottom, rgb(17, 24, 39), transparent), url("../assets/lanqiaopng.png");
+  
+  }
 }
