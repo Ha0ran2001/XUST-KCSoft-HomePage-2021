@@ -6,16 +6,17 @@ import '../styles/HomeAndCar.css';
 
 export default function HomeAndCar() {
 
+
   return (
-    <div className='flex flex-col md:flex-row justify-around items-center h-[100vh]'>
+    <div className='flex flex-col md:flex-row justify-around items-center h-[100vh] relative'>
       <div className='flex flex-col space-y-8 items-center'>
         <div className='w-full relative overflow-hidden'>
           <div className='flash-bar'></div>
           <img src={car} alt="" className='w-full h-[280px] md:h-[300px]' />
+          <div onClick={() => window.location.href = "http://car.xust-kcsoft.club"} className='absolute w-full h-full top-0 flex justify-center items-center text-white bg-gray-400 bg-opacity-50'>
+            <p className='border-2 px-5 py-2 rounded-full'>去玩玩小车</p>
+          </div>
         </div>
-        <button className='button_flow w-80'>
-          <a href="http://car.xust-kcsoft.club/">去玩玩小车</a>
-        </button>
       </div>
     </div>
   )
