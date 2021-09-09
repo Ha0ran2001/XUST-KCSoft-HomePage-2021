@@ -1,6 +1,7 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
+import '../styles/Member.css'
 
 import shelly from '../assets/avatar/shelly.jpg';
 import wangziheng18 from '../assets/avatar/18wangziheng.jpg';
@@ -66,21 +67,35 @@ export default function Members() {
     <div className='min-h-screen'>
       <h1 className='text-3xl text-center my-10 font-bold tracking-widest'>实验室<span className='text-blue-700'>成员</span></h1>
       <Parallax ref={parallax} pages={3} horizontal={true}>
-        <ParallaxLayer offset={0} speed={0} factor={3} style={{ backgroundImage: bgUrl('stars', true), backgroundSize: 'cover' }} />
+        <ParallaxLayer
+          offset={0}
+          speed={0}
+          factor={3}
+          style={{ backgroundImage: bgUrl('stars', true), backgroundSize: 'cover' }} />
+
         {memberAvatars.map((item, index) => (
           <ParallaxLayer
             key={item.info}
             offset={randomPosition()}
             speed={speed()}
             style={{ opacity: `${opacity()}` }} >
-            <img src={item.src} alt={item.info} style={{ width: `${imageSize()}%`, marginTop: `${marginTop()}%` }} />
+            <img
+              src={item.src}
+              alt={item.info}
+              style={{ width: `${imageSize()}%`, marginTop: `${marginTop()}%` }} />
           </ParallaxLayer>
         ))}
 
-        <ParallaxLayer offset={-0.7} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+        <ParallaxLayer
+          offset={-0.7}
+          speed={-0.4}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
           <img src={wangziheng18} className='w-[20%]' />
         </ParallaxLayer>
-        <ParallaxLayer offset={0.3} speed={-0.4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+        <ParallaxLayer
+          offset={0.3}
+          speed={-0.4}
+          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
           <img src={yuchenkang} className='w-[20%]' />
         </ParallaxLayer>
 
