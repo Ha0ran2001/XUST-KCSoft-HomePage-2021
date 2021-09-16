@@ -10,6 +10,8 @@ import Car from './components/Car'
 import Technologys from './components/Technologys';
 import Award from './components/Award';
 
+import Recruit from './components/Recruit';
+
 function App() {
 
 
@@ -17,6 +19,7 @@ function App() {
     <>
       <HashRouter>
         <Switch>
+          <Route path='/recruit'><Recruit /></Route>
           <Route path='/'>
             <div className='text-gray-400'>
               <NavBar />

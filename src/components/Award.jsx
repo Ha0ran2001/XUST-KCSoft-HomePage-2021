@@ -11,8 +11,8 @@ export default function NewAward() {
 
   const getCards = async () => {
     let res = await axios.get('http://39.101.65.80:8080/searchList');
-    console.log(res.data);
-    setCards(res.data);
+    console.log(res.data.data);
+    setCards(res.data.data);
   }
   useEffect(() => {
     getCards();

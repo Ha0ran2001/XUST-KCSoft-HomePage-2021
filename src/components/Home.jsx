@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react'
 import qqqun from '../assets/qqqun.jpg';
 
 export default function Home() {
+  const history = useHistory();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const showQRcode = () => {
@@ -83,7 +86,7 @@ export default function Home() {
                   <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-                    onClick={closeQRcode}
+                    onClick={() => history.push('/recruit')}
                   >
                     我知道了，这就去！
                   </button>
