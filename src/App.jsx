@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 import NavBar from './components/NavBar';
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
           <Route path='/recruit'><Recruit /></Route>
           <Route path='/'>
@@ -32,7 +32,7 @@ function App() {
             </div>
           </Route>
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </>
   )
 }
