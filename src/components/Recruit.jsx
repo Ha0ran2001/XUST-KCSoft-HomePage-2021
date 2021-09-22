@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react'
-import logo from '../assets/logo.png'
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import axios from 'axios';
 
 const majors = [
@@ -13,7 +14,7 @@ const majors = [
   { name: '人文与外国语学院', major: ['请选择专业', '汉语言文学', '法学', '英语'] },
   { name: '材料学院', major: ['请选择专业', '新能源材料与器件', '无机非金属材料工程', '材料科学与工程', '高分子材料与工程'] },
   { name: '地环学院', major: ['请选择专业', '地下水科学与工程', '地质工程', '环境工程', '资源勘查工程'] },
-  { name: '继续教育学院', major: ['请选择专业', '少数名族预料'] },
+  { name: '继续教育学院', major: ['请选择专业', '少数名族预科'] },
   { name: '理学院', major: ['请选择专业', '工程力学', '数学与应用数学'] },
   { name: '化工学院', major: ['请选择专业', '化学工程与工艺', '应用化学', '矿物加工工程', '能源化学工程'] },
   { name: '建工学院', major: ['请选择专业', '土木工程', '城乡规划', '城市地下空间工程', '建筑学', '给排水科学与工程'] },
@@ -103,7 +104,7 @@ export default function Recruit() {
         </div>
         <div action="" className='flex flex-col space-y-4 w-3/4 md:w-[400px] rounded-lg bg-white p-5 md:p-10'>
           <div className='flex justify-center items-center space-x-2'>
-            <img src={logo} alt="" className='w-10 h-10' />
+            <Link to="/"><img src={logo} alt="" className='w-10 h-10' /></Link>
             <span className='text-lg font-bold'>2021招新考核报名</span>
           </div>
           <p className='text-xs text-gray-400'>请填写以下信息</p>
@@ -127,7 +128,7 @@ export default function Recruit() {
               <select
                 value={college}
                 onChange={(e) => collegeChange(e)}
-                className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-3 bg-white'>
+                className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-4 bg-white'>
                 {majors.map((item, index) => (
                   <option value={item.name} key={item.name}>{item.name}</option>
                 ))}
@@ -135,7 +136,7 @@ export default function Recruit() {
               <select
                 value={major}
                 onChange={(e) => majorChange(e)}
-                className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-3 bg-white '>
+                className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-4 bg-white '>
                 {college.length && majors.filter(item => item.name === college)[0].major.map(item => (
                   <option value={item} key={item}>{item}</option>
                 ))}
