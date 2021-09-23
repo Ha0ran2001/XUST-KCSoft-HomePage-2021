@@ -1,7 +1,6 @@
 import React from 'react'
 import { ArrowNarrowDownIcon } from '@heroicons/react/outline';
 
-
 export default function Bounce() {
   return (
     <>

@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import qqqun from '../assets/qqqun.jpg';
 
 export default function Home() {
+
   const history = useHistory();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function Home() {
   const showQRcode = () => {
     setIsOpen(true);
   }
+  
   const closeQRcode = () => {
     setIsOpen(false);
   }

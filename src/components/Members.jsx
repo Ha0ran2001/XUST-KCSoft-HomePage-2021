@@ -58,11 +58,12 @@ const memberAvatars = [
   { src: zhoujie, info: '19级后端周捷' },
   { src: wuhaoran, info: '19级前端吴浩然', },
   { src: yishun, info: '易顺', },
-
-]
+];
 
 export default function Members() {
+
   const parallax = useRef();
+
   return (
     <div className='min-h-screen'>
       <h1 className='text-3xl text-center my-10 font-bold tracking-widest'>实验室<span className='text-blue-700'>成员</span></h1>
@@ -106,7 +107,6 @@ export default function Members() {
           <img src={shelly} className='w-[25%]' />
         </ParallaxLayer>
       </Parallax>
-
     </div>
   )
 }

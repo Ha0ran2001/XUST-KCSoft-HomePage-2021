@@ -31,27 +31,6 @@ export default function Recruit() {
   const [major, setMajor] = useState('请选择专业');
   const [phone, setPhone] = useState(null);
 
-  const xhRef = useRef();
-
-  const nameChange = (e) => {
-    setName(e.target.value)
-  }
-
-  const xhChange = (e) => {
-    setXh(e.target.value)
-  }
-
-  const collegeChange = (e) => {
-    setCollege(e.target.value);
-  }
-
-  const majorChange = (e) => {
-    setMajor(e.target.value);
-  }
-
-  const phoneChange = (e) => {
-    setPhone(e.target.value);
-  }
 
   const setInfo = async () => {
     if (!name.length) {
@@ -77,20 +56,14 @@ export default function Recruit() {
       return;
     }
 
-    const infoData = {
-      name,
-      xh,
-      college,
-      major,
-      phone
-    }
+    const infoData = { name, xh, college, major, phone };
 
-    console.log(infoData);
     let res = await axios({
       url: 'http://39.101.65.80:8081/insertOne',
       method: 'POST',
       data: infoData
     });
+    
     if (res.data.message === '插入成功') {
       alert('提交成功，恭喜你！')
     }
@@ -112,15 +85,14 @@ export default function Recruit() {
           <form action="" className='flex flex-col space-y-3 md:space-y-5'>
             <input
               type="text"
-              onChange={(e) => nameChange(e)}
+              onChange={(e) => setName(e.target.value)}
               className='rounded-lg flex-1 appearance-none border
              border-gray-300 w-full py-1 px-4 bg-white text-gray-700 
              placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#030143]
              focus:border-transparent' placeholder='姓名' />
             <input
               type="text"
-              ref={xhRef}
-              onChange={(e) => xhChange(e)}
+              onChange={(e) => setXh(e.target.value)}
               className='rounded-lg flex-1 appearance-none border
              border-gray-300 w-full py-1 px-4 bg-white text-gray-700 
              placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#030143]
@@ -128,7 +100,7 @@ export default function Recruit() {
             <div className='w-full flex flex-col space-y-2'>
               <select
                 value={college}
-                onChange={(e) => collegeChange(e)}
+                onChange={(e) =>  setCollege(e.target.value)}
                 className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-4 bg-white'>
                 {majors.map((item, index) => (
                   <option value={item.name} key={item.name}>{item.name}</option>
@@ -136,7 +108,7 @@ export default function Recruit() {
               </select>
               <select
                 value={major}
-                onChange={(e) => majorChange(e)}
+                onChange={(e) => setMajor(e.target.value)}
                 className='border rounded-lg border-gray-300 focus:outline-none text-gray-700 py-1 px-4 bg-white '>
                 {college.length && majors.filter(item => item.name === college)[0].major.map(item => (
                   <option value={item} key={item}>{item}</option>
@@ -145,7 +117,7 @@ export default function Recruit() {
             </div>
             <input
               type="text"
-              onChange={(e) => phoneChange(e)}
+              onChange={(e) => setPhone(e.target.value)}
               className='rounded-lg flex-1 appearance-none border
              border-gray-300 w-full py-1 px-4 bg-white text-gray-700 
              placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#030143]

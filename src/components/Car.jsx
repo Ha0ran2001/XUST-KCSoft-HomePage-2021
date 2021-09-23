@@ -1,12 +1,8 @@
 import React from 'react';
-
 import car from '../assets/car.png';
-
 import '../styles/HomeAndCar.css';
 
 export default function HomeAndCar() {
-
-
   return (
     <div className='flex justify-around items-center cursor-pointer h-[100vh] relative'>
       <div className='w-full relative overflow-hidden md:w-[60%]'>
